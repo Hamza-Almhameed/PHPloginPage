@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title></title>
+</head>
+<body>
+    <form action="signup.php" method="post">
+        <h1>Sign-up to MyWeb</h1>
+        <input required type="text" placeholder="Full Name" name="name">
+        <input required type="email" placeholder="Email" name="email">
+        <input required type="password" placeholder="Password" name="password" id="pass1">
+        <input required type="password" placeholder="Confirm Password" name="passwordConf" id="pass2">
+        <input disabled type="submit" value="Sign-up" name="submit" id="submit">
+    </form>
+</body>
+<script>
+    let pass1 = document.getElementById("pass1");
+    let pass2 = document.getElementById("pass2");
+    let btn = document.getElementById("submit");
+
+    pass2.addEventListener("input", function() {
+        if (this.value == pass1.value) {
+            btn.removeAttribute("disabled")
+        } else{
+            btn.setAttribute("disabled", "")
+        }
+    })
+
+    pass1.addEventListener("input", function() {
+        if (this.value == pass2.value) {
+            btn.removeAttribute("disabled")
+        } else{
+            btn.setAttribute("disabled", "")
+        }
+    })
+</script>
+</html>
